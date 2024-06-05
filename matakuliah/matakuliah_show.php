@@ -5,7 +5,7 @@
     <div class="card-body">
         <form action="?page=matakuliah-show" method="POST">
             <div class=" input-group mb-3">
-                <input type="text" class="form-control" placeholder="Masukan NIM atau Nama..." name="keyword">
+                <input type="text" class="form-control" placeholder="Masukan KODE atau Nama..." name="keyword">
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="submit" value="Cari" id="button-search" name="search">Cari !</button>
                 </div>
@@ -25,13 +25,10 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>NIM</th>
+                        <th>KODE</th>
                         <th>Nama</th>
-                        <th>Alamat</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Email</th>
-                        <th>Telepon</th>
-                        <th>Aksi</th>
+                        <th>SKS</th>
+                        <th>Semester</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,7 +36,7 @@
                     if (isset($_POST['search'])) {
                         $keyword = trim($_POST['keyword']);
                         if (!empty($keyword)) {
-                            $query = mysqli_query($con, "SELECT * FROM matakuliah WHERE nim LIKE '%" . $keyword . "%' OR nama LIKE '%" .
+                            $query = mysqli_query($con, "SELECT * FROM matakuliah WHERE kode LIKE '%" . $keyword . "%' OR nama LIKE '%" .
                                 $keyword . "%'");
                         }
                     }
