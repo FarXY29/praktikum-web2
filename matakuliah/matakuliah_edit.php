@@ -5,12 +5,10 @@ $id = $_GET['id'];
 // Fetech user data based on id
 $result = mysqli_query($con, "SELECT * FROM matakuliah WHERE id=$id");
 while ($data = mysqli_fetch_array($result)) {
-    $nim = $data['nim'];
+    $kode = $data['kode'];
     $nama = $data['nama'];
-    $alamat = $data['alamat'];
-    $jk = $data['jenis_kelamin'];
-    $email = $data['email'];
-    $telepon = $data['telepon'];
+    $sks = $data['sks'];
+    $semester = $data['semester'];
 }
 ?>
 <div class="row">

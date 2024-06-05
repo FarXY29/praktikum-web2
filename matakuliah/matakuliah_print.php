@@ -11,7 +11,7 @@ $pdf->Cell(10, 6, 'No.', 1, 0);
 $pdf->Cell(20, 6, 'KODE', 1, 0);
 $pdf->Cell(50, 6, 'Nama', 1, 0);
 $pdf->Cell(100, 6, 'SKS', 1, 0);
-$pdf->Cell(50, 6, 'Semester', 1, 0);
+$pdf->Cell(50, 6, 'Semester', 1, 1);
 $pdf->SetFont('Arial', '', 10);
 
 include '../connection.php';
@@ -22,6 +22,6 @@ while ($data = mysqli_fetch_array($result)) {
     $pdf->Cell(20, 6, $data['kode'], 1, 0);
     $pdf->Cell(50, 6, $data['nama'], 1, 0);
     $pdf->Cell(100, 6, $data['sks'], 1, 0);
-    $pdf->Cell(50, 6, $data['semester'], 1, 0);
+    $pdf->Cell(50, 6, $data['semester'], 1, 1);
 }
 $pdf->Output();
